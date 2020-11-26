@@ -1,4 +1,4 @@
-# week-13-canvas
+# lab-13-canvas
 
 This is a starter repository for students in MTEC1003 (Fall 2020, online).
 
