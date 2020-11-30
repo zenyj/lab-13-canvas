@@ -1,0 +1,38 @@
+<!-- https://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/12/canvas.html#10.0 
+https://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/12/canvas.html#16.0
+	—Each shape you create draws on top of all of your previous drawwings. 
+	—In this case, the green circle is drawn over the black square:
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+	<!-- https://entertainmenttechnology.github.io/Wilson-MTEC1003/labs/12/canvas.html#5.0
+		We’ll have to let the page know that it should start drawing once the entire page is loaded. 
+			—we do this by adding an onload event handler to the body tag... 
+			—that calls a function called draw() that we’ll define later
+			—note that there are better ways to do this, but we’ll go with this technique for now. 
+	-->
+
+	<canvas id="sketch" width="300" height="300">
+		
+	</canvas>
+
+	<script>
+		function draw() {
+		 	var sketch = document.getElementById('sketch');
+			var context = sketch.getContext("2d");
+			//square
+        	context.fillRect(30, 100, 100, 100);
+
+
+			context.fillStyle = "#00ff00";
+			
+		}
+
+	</script>
+
+</body>
+</html>
