@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#sketch {
+	border:1px solid #000;
+}
+</style>
+	<title></title>
+</head>
+<body onload = "main()">
+	
+
+	<canvas id="sketch" width="480" height="720">
+		
+
+	</canvas>
+
+	<script>
+        document.addEventListener('DOMContentLoaded', main);
+        
+        
+        var sketch;
+        var context;
+        var circle;
+        var dx = 2;
+        var dy = 2;
+        var fps = 15;
+        var animation;
+        
+        
+		function main() {
+		 	sketch = document.getElementById('sketch');
+			context = sketch.getContext("2d"); 
+            circle = {'x':25, 'y':sketch.offsetHeight / 2, 'r':25};
+            animation = setInterval(animate, fps);
+		}
+        
+        function animate() {
+             context.clearRect(0, 0, sketch.offsetWidth, sketch.offsetHeight);
+             draw_circle(context, circle.x, circle.y, circle.r);
+             velocity: circle.x = circle.x + dx;
+             velocity: circle.y = circle.y + dy;
+        
+            
+       circle.x = circle.x + dx;
+	if (circle.x > sketch.offsetWidth - dx - circle.r || circle.x < circle.r - dx ) {
+		dx = dx * -1;
+		circle.x = offsetWidth;
+        }
+            
+        circle.y = circle.y + dy;
+	if (circle.y > sketch.offsetWidth - dy - circle.r || circle.y < circle.r - dy ) {
+		dy = dy * -1;
+		circle.y = offsetWidth;
+        }
+        
+        }
+        
+        function draw_circle(context, x, y, r) {
+	        context.fillStyle = "#0000E6";
+            context.beginPath();
+            context.arc(x, y, r, 0, 2 * Math.PI, true);
+            context.closePath();
+			context.fill();
+}
+	</script>
+
+</body>
+</html>

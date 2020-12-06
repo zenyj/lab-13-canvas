@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+	
+
+	<canvas id="sketch" width="300" height="300">
+		
+
+	</canvas>
+
+	<script>
+		function draw() {
+		 	var sketch = document.getElementById('sketch');
+			var context = sketch.getContext("2d");
+            
+            var userstring = prompt("how many circles in a row do you want?");
+            var usernum = parseInt(userstring, 10);
+            var thismany = usernum *2-1;
+            
+            for(var i = 0; i <= thismany; i++){
+              if (i % 2==0){// all EVEN numbers (modulo =2; that means all even numbers are divisible by 2)
+            context.fillStyle = "#927be8"
+            //these are going to be purple
+            context.beginPath();
+            context.arc((i * 15 +10), 30 , 10, 0, 2 * Math.PI, true);
+            // context.arc(x, y, radius, start angle, end angle, clockwise);
+			context.closePath();
+			context.fill();
+            }
+            
+        }
+            
+            
+            
+            
+       
+            
+		}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+		
+        
+
+	</script>
+
+</body>
+</html>
